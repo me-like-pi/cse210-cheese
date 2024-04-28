@@ -5,10 +5,16 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Grade Calculator");
+
+//This asks for Your Grade precentage, and then turns it into a number.
         Console.WriteLine("What Grade Precentage do you have?");
         string gradeStringCPD = Console.ReadLine();
         int gradeCPD = int.Parse(gradeStringCPD);
+//Variables
         string letterCPD = "";
+        string plusOrMinusCPD = "";
+
+//This Determines the overall letter grade.
         if (gradeCPD >= 90) 
         {
             letterCPD = "A";
@@ -29,7 +35,25 @@ class Program
         {
             letterCPD = "F";
         }
-        Console.WriteLine($"Your Grade is a {letterCPD}!");
+//This determines if You have a 'Plus or minus grade'
+        if (gradeCPD >= 97)
+        {
+            plusOrMinusCPD = "!";
+        }
+        else if (gradeCPD <= 59)
+        {
+            plusOrMinusCPD = "!";
+        }
+        else if ((gradeCPD % 10) >= 7)
+        {
+            plusOrMinusCPD = "+!";
+        }
+        else if ((gradeCPD % 10) <= 3)
+        {
+            plusOrMinusCPD = "-!";
+        }
+//This Determines if you passed or not.
+        Console.WriteLine($"Your Grade is a {letterCPD}{plusOrMinusCPD}");
         if (gradeCPD >= 70)
         {
             Console.WriteLine("Congradulations! You Passed!!!!!");
