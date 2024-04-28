@@ -8,26 +8,28 @@ class Program
         Console.WriteLine("What Grade Precentage do you have?");
         string gradeStringCPD = Console.ReadLine();
         int gradeCPD = int.Parse(gradeStringCPD);
+        string letterCPD = "";
         if (gradeCPD >= 90) 
         {
-            Console.WriteLine("Your Grade is an A!");
+            letterCPD = "A";
         }
         else if (gradeCPD >= 80)
         {
-            Console.WriteLine("Your Grade is an B!");
+            letterCPD = "B";
         }
         else if (gradeCPD >= 70)
         {
-            Console.WriteLine("Your Grade is an C!");
+            letterCPD = "C";
         }
         else if (gradeCPD >= 60)
         {
-            Console.WriteLine("Your Grade is an D.");
+            letterCPD = "D";
         }
         else
         {
-            Console.WriteLine("Your Got an F.");
+            letterCPD = "F";
         }
+        Console.WriteLine($"Your Grade is a {letterCPD}!");
         if (gradeCPD >= 70)
         {
             Console.WriteLine("Congradulations! You Passed!!!!!");
@@ -54,7 +56,5 @@ Start by completing the core requirements, then when that part is complete, if y
 Please work through the requirements in order rather than jumping ahead to more complicated steps, to ensure that everyone is following the concepts.
 
 Core Requirements
-Assume that you must have at least a 70 to pass the class. After determining the letter grade and printing it out. Add a separate if statement to determine if the user passed the course, and if so display a message to congratulate them. If not, display a different message to encourage them for next time.
-
 Change your code from the first part, so that instead of printing the letter grade in the body of each if, elif, or else block, instead create a new variable called letter and then in each block, set this variable to the appropriate value. Finally, after the whole series of if-elif-else statements, have a single print statement that prints the letter grade once.
 */
