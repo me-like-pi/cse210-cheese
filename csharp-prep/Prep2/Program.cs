@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+//Title
         Console.WriteLine("Grade Calculator");
 
 //This asks for Your Grade precentage, and then turns it into a number.
