@@ -8,6 +8,6 @@ class Program
         string firstNameCPD = Console.ReadLine();
         Console.WriteLine("What is your last name?");
         string lastNameCPD = Console.ReadLine();
-        Console.WriteLine($"Your name is {LastNameCPD}, {FirstNameCPD} {LastNameCPD}.");
+        Console.WriteLine($"Your name is {lastNameCPD}, {firstNameCPD} {lastNameCPD}.");
     }
 }
