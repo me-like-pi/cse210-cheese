@@ -34,5 +34,5 @@ for x in range(9):                           foreach (string color in colors)
                                              {  
                                                 Console.Writeline("cheese");
                                              }
-
+key words for encapulation are private and public eg public static void(string[args]){}
 */
