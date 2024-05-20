@@ -2,6 +2,18 @@
 {
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "count",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-count",
+            "program": "${workspaceFolder}/sandbox/count/bin/Debug/net8.0/count.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/count",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
 
         {
             "name": "Sandbox Project",
