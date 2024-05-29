@@ -43,6 +43,6 @@ class Program
 
     static void DisplayResultCPD(string nameCPD, int squareCPD)
     {
-        Console.WriteLine($"{nameCPD}, the square of your number is {squareCPD}");
+        Console.WriteLine($"{nameCPD}, the square is {squareCPD}");
     }
 }
