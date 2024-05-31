@@ -1,9 +1,20 @@
 using System;
 
-class scripture
+class Scripture
 {
-    static void Main(string[] args)
+    private string _referenceCPD;
+    private string _bodyCPD;
+
+    public Scripture()
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Reference testCPD = new Reference();
+        _chapterCPD._jobsCPD.Add(job1CPD);
     }
+
+
+    // public void Display()
+    // {
+    //     Reference testCPD = new Reference();
+    //     testCPD.Display();
+    // }
 }
