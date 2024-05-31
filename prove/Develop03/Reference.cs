@@ -11,11 +11,22 @@ class Reference
         _chapterCPD = "Mosiah 26:30";
     }
 
-    public void Display()
-    {
-        // Console.WriteLine(_chapterCPD);
-        // Console.WriteLine(_scriptureCPD);
+    public string GetScriptureCPD()
+        {
+            // Notice that this is not stored as a member variable.
+            // Is is just a temporary, local variable that will be recomputed each time this is called.
+            string text = _scriptureCPD;
+            return text;
+        }
+
+
+
+
+    // public void Display()
+    // {
+    //     // Console.WriteLine(_chapterCPD);
+    //     // Console.WriteLine(_scriptureCPD);     string _scriptureCPD,string _chapterCPD
         
         
-    }
+    // }
 }

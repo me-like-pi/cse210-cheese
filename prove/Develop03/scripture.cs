@@ -7,14 +7,15 @@ class Scripture
 
     public Scripture()
     {
-        Reference testCPD = new Reference();
-        _chapterCPD._jobsCPD.Add(job1CPD);
+        Reference newScriptureCPD = new Reference();
+        _bodyCPD = newScriptureCPD.GetScriptureCPD();
+        _referenceCPD = newScriptureCPD.GetScriptureCPD();
+
     }
 
 
-    // public void Display()
-    // {
-    //     Reference testCPD = new Reference();
-    //     testCPD.Display();
-    // }
+    public void Display()
+    {
+        Console.WriteLine($"{_bodyCPD}, {_referenceCPD}" );
+    }
 }
