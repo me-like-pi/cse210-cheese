@@ -5,19 +5,21 @@ class Word
     private string _referenceCPD;
     private string _bodyCPD;
     private string[] _verseCPD;
+    
     Reference newScriptureCPD = new Reference();
+    Random randCPD = new Random();
     public Word()
     {
-        // Reference newScriptureCPD = new Reference();
         _bodyCPD = newScriptureCPD.GetScriptureCPD();
         _referenceCPD = newScriptureCPD.GetChapterCPD();
         _verseCPD = _bodyCPD.Split(' ');
 
+        // Generate a random integer between 0 and the length of the list.
+        // int randomNumberCPD = randCPD.Next(0, _verseCPD.Length);
+        // // Console.WriteLine(randomNumberCPD);
+        // _verseCPD[randomNumberCPD] = _dashesCPD;
+        
     }
-    
-
-
-
     public string GetReferenceCPD()
         {
             // Notice that this is not stored as a member variable.
@@ -32,17 +34,4 @@ class Word
         string[] textCPD = _verseCPD;
         return textCPD;
     }
-
-
-
-
-
-//     string sentence = "Yea, and as often as my people repent will I forgive them their trespasses against me.";
-// string[] words = sentence.Split(' ');
-
-// foreach (string word in words)
-// {
-//     Console.WriteLine(word);
-// }
-
 }

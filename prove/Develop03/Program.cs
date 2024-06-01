@@ -6,8 +6,18 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Learning04 World!");
-        Scripture testCPD = new Scripture();
-        testCPD.Display();
+        // initializing new classes
+        Reference newScriptureCPD = new Reference();
+        Scripture verseCPD = new Scripture();
+        
+        
+        //Displaying the scripture without anything missing.
+        newScriptureCPD.Display();
+        //Starting the loop.
+        verseCPD.Display();
+        
+        
+
 
     }
 }

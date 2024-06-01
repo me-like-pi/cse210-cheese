@@ -25,4 +25,8 @@ class Reference
                 string chapCPD = _chapterCPD;
                 return chapCPD;
             }
+    public void Display()
+    {
+        Console.WriteLine($"{_chapterCPD}\n{_scriptureCPD}");
+    }
 }
