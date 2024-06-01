@@ -40,6 +40,7 @@ class Scripture
                 Console.Write(word + " ");
             }
             Console.WriteLine(); // To add a newline at the end
+            Console.WriteLine("Press Enter to Continue or type 'quit' to exit.");
         }
     }
 }
