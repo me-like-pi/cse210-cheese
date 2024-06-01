@@ -1,41 +1,41 @@
 using System;
 
-public class Fraction
+public class FractionCalculate
 {
-    private int _top;
-    private int _bottom;
+    private int _topCPD;
+    private int _bottomCPD;
 
-    public Fraction()
+    public FractionCalculate()
     {
         // Default to 1/1
-        _top = 1;
-        _bottom = 1;
+        _topCPD = 1;
+        _bottomCPD = 1;
     }
 
-    public Fraction(int wholeNumber)
+    public FractionCalculate(int wholeNumberCPD)
     {
-        _top = wholeNumber;
-        _bottom = 1;
+        _topCPD = wholeNumberCPD;
+        _bottomCPD = 1;
     }
 
-    public Fraction(int top, int bottom)
+    public FractionCalculate(int topCPD, int bottomCPD)
     {
-        _top = top;
-        _bottom = bottom;
+        _topCPD = topCPD;
+        _bottomCPD = bottomCPD;
     }
 
-    public string GetFractionString()
+    public string GetFractionStringCPD()
     {
         // Notice that this is not stored as a member variable.
         // Is is just a temporary, local variable that will be recomputed each time this is called.
-        string text = $"{_top}/{_bottom}";
-        return text;
+        string textCPD = $"{_topCPD}/{_bottomCPD}";
+        return textCPD;
     }
 
-    public double GetDecimalValue()
+    public double GetDecimalValueCPD()
     {
         // Notice that this is not stored as a member variable.
         // Is will be recomputed each time this is called.
-        return (double)_top / (double)_bottom;
+        return (double)_topCPD / (double)_bottomCPD;
     }
 }
