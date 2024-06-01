@@ -15,18 +15,14 @@ class Reference
         {
             // Notice that this is not stored as a member variable.
             // Is is just a temporary, local variable that will be recomputed each time this is called.
-            string text = _scriptureCPD;
-            return text;
+            string textCPD = _scriptureCPD;
+            return textCPD;
         }
-
-
-
-
-    // public void Display()
-    // {
-    //     // Console.WriteLine(_chapterCPD);
-    //     // Console.WriteLine(_scriptureCPD);     string _scriptureCPD,string _chapterCPD
-        
-        
-    // }
+    public string GetChapterCPD()
+            {
+                // Notice that this is not stored as a member variable.
+                // Is is just a temporary, local variable that will be recomputed each time this is called.
+                string chapCPD = _chapterCPD;
+                return chapCPD;
+            }
 }

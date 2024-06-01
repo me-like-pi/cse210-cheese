@@ -3,19 +3,25 @@ using System;
 class Scripture
 {
     private string _referenceCPD;
-    private string _bodyCPD;
+    private string[] _bodyCPD;
 
     public Scripture()
     {
-        Reference newScriptureCPD = new Reference();
-        _bodyCPD = newScriptureCPD.GetScriptureCPD();
-        _referenceCPD = newScriptureCPD.GetScriptureCPD();
+        Word newScriptureCPD = new Word();
+        _bodyCPD = newScriptureCPD.GetBodyCPD();
+        _referenceCPD = newScriptureCPD.GetReferenceCPD();
 
     }
 
 
     public void Display()
     {
-        Console.WriteLine($"{_bodyCPD}, {_referenceCPD}" );
+        // Console.WriteLine($"{_referenceCPD}\n{_bodyCPD}" );
+        Console.WriteLine(_referenceCPD);
+        foreach (string word in _bodyCPD)
+        {
+            Console.Write(word + " ");
+        }
+        Console.WriteLine(); // To add a newline at the end
     }
 }
