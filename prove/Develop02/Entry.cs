@@ -2,9 +2,9 @@
 class Entry
 {
     // atributes
-    public string _prompt { get; set; }
-    public string _response { get; set; }
-    public string _date { get; set; }
+    public string _prompt;
+    public string _response;
+    public string _date;
 
     // Constructor
     public Entry(string prompt, string response, string date)
