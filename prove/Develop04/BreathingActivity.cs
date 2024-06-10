@@ -1,4 +1,8 @@
-class BreathingActivity 
+class BreathingActivity : Activity
 {
-    
+    // constructor
+    public BreathingActivity():base()
+    {
+
+    }
 }

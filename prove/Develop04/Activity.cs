@@ -1,4 +1,4 @@
-class Activity
+public class Activity
 {
     // attributes
     protected string _title;
