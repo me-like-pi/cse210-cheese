@@ -6,6 +6,12 @@ class Program
     {
         Console.WriteLine("Hello MindfullnessApp World!");
 
-        Activity activity = new Activity();
+        // Activity activity = new Activity();
+
+        BreathingActivity breathing = new BreathingActivity();
+        ReflectionActivity reflecting = new ReflectionActivity();
+        ListingActivity listing = new ListingActivity();
+
+
     }
 }
