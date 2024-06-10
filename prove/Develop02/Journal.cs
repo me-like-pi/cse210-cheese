@@ -1,24 +1,25 @@
 // Define the Journal class to manage journal entries
 class Journal
 {
-    private List<Entry> entries;
+    //atributes
+    private List<Entry> _entries;
 
     // Constructor
     public Journal()
     {
-        entries = new List<Entry>();
+        _entries = new List<Entry>();
     }
 
     // Method to add a new entry
     public void AddEntry(string prompt, string response, string date)
     {
-        entries.Add(new Entry(prompt, response, date));
+        _entries.Add(new Entry(prompt, response, date));
     }
 
     // Method to display all entries
     public void DisplayJournal()
     {
-        foreach (var entry in entries)
+        foreach (var entry in _entries)
         {
             entry.DisplayEntry();
         }
@@ -29,9 +30,9 @@ class Journal
     {
         using (StreamWriter writer = new StreamWriter(filename))
         {
-            foreach (var entry in entries)
+            foreach (var entry in _entries)
             {
-                writer.WriteLine($"{entry.Date}|{entry.Prompt}|{entry.Response}");
+                writer.WriteLine($"{entry._date}|{entry._prompt}|{entry._response}");
             }
         }
     }
@@ -39,7 +40,7 @@ class Journal
     // Method to load journal from a file
     public void LoadFromFile(string filename)
     {
-        entries.Clear(); // Clear existing entries before loading from file
+        _entries.Clear(); // Clear existing _entries before loading from file
         using (StreamReader reader = new StreamReader(filename))
         {
             string line;
