@@ -8,9 +8,10 @@ class Program
         BreathingActivity breathing = new BreathingActivity();
         ReflectionActivity reflecting = new ReflectionActivity();
         ListingActivity listing = new ListingActivity();
+        var timer = new Timer(TimeSpan.FromSeconds(5));
+
         bool exit = false;
-
-
+        timer.WaitUntilTimeElapsed();
 
         while(!exit)
         {
