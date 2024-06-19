@@ -32,8 +32,10 @@
                 Console.Write($"{i}...");
                 Console.Out.Flush(); // Explicitly flush the console buffer
                 Thread.Sleep(1000); // Wait for 1 second
-                Console.Out.Flush(); // Explicitly flush the console buffer
-
+                Console.Write("\b"); // Erase the timer characters
+                Console.Write("\b"); // Erase the timer characters
+                Console.Write("\b"); // Erase the timer characters
+                Console.Write("\b"); // Erase the timer characters
             }
             Console.WriteLine();
         }
