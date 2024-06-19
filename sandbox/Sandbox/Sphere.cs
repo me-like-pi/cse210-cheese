@@ -1,7 +1,5 @@
 class Sphere : Circle
 {
-    private double _height;
-
 
     public Sphere(double r) : base (r) { }
 

@@ -1,59 +1,50 @@
-using System;
-using System.Runtime.CompilerServices;
-
-class Program
-{
-    static void Main(string[] args)
+// Main program class
+    class Program
     {
-        BreathingActivity breathing = new BreathingActivity();
-        ReflectionActivity reflecting = new ReflectionActivity();
-        ListingActivity listing = new ListingActivity();
-        var timer = new Timer(TimeSpan.FromSeconds(5));
-
-        bool exit = false;
-        timer.WaitUntilTimeElapsed();
-
-        while(!exit)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello MindfullnessApp World!");
-            Console.WriteLine("Welcome to the Mindfullness App!");
-            Console.WriteLine("Please enter a number to select one of the following activities.");
-            Console.WriteLine("1. Breathing Activity");
-            Console.WriteLine("2. Listing Activity");
-            Console.WriteLine("3. Reflection Activity");
-            Console.WriteLine("4. Exit");
+            // Load existing activity log if available
+            Activity.LoadLog();
 
-            string choice = Console.ReadLine();
+            bool exit = false;
+            while (!exit)
+            {
+                Console.WriteLine("Hello MindfulnessApp World!");
+                Console.WriteLine("Welcome to the Mindfulness App!");
+                Console.WriteLine("Please enter a number to select one of the following activities.");
+                Console.WriteLine("1. Breathing Activity");
+                Console.WriteLine("2. Listing Activity");
+                Console.WriteLine("3. Reflection Activity");
+                Console.WriteLine("4. Exit");
 
-            if (choice == "1")
-            {
+                string choice = Console.ReadLine();
 
-            }
-            else if (choice == "2")
-            {
-
-            }
-            else if (choice == "3")
-            {
-            
-            }
-            else if (choice == "4")
-            {
-                // Exit the program
-                exit = true;
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice. Please enter a valid option.");
+                if (choice == "1")
+                {
+                    Activity activity = new BreathingActivity();
+                    activity.Start();
+                }
+                else if (choice == "2")
+                {
+                    Activity activity = new ListingActivity();
+                    activity.Start();
+                }
+                else if (choice == "3")
+                {
+                    Activity activity = new ReflectionActivity();
+                    activity.Start();
+                }
+                else if (choice == "4")
+                {
+                    // Save log and exit the program
+                    Activity.SaveLog();
+                    Console.WriteLine("Log saved. Goodbye!");
+                    exit = true;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please enter a valid option.");
+                }
             }
         }
-
-
-
-        // Activity activity = new Activity();
-
-        
-
-
     }
-}
