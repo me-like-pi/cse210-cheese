@@ -1,4 +1,4 @@
-    // Base class for all activities
+// Base class for all activities
     public abstract class Activity
     {
         protected int Duration;
@@ -29,8 +29,11 @@
         {
             for (int i = seconds; i > 0; i--)
             {
-                Console.Write($"{i}...", flush: true);
+                Console.Write($"{i}...");
+                Console.Out.Flush(); // Explicitly flush the console buffer
                 Thread.Sleep(1000); // Wait for 1 second
+                Console.Out.Flush(); // Explicitly flush the console buffer
+
             }
             Console.WriteLine();
         }
