@@ -1,11 +1,10 @@
 public class ListGoal : Goal
 {
-    public int TargetCount { get; set; }
-    public int CurrentCount { get; set; }
-    public int BonusPoints { get; set; }
+    public int TargetCount;
+    public int CurrentCount;
+    public int BonusPoints;
 
-    public ListGoal(string name, int points, int targetCount, int bonusPoints)
-        : base(name, points)
+    public ListGoal(string name, int points, int targetCount, int bonusPoints) : base(name, points)
     {
         TargetCount = targetCount;
         CurrentCount = 0;
