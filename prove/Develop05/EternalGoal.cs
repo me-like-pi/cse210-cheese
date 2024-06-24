@@ -16,4 +16,15 @@ public class EternalGoal : Goal
     {
         return "[∞]";
     }
+
+    public override string Serialize()
+    {
+        return $"EternalGoal|{Name}|{Points}";
+    }
+
+    public override void Deserialize(string[] data)
+    {
+        Name = data[1];
+        Points = int.Parse(data[2]);
+    }
 }

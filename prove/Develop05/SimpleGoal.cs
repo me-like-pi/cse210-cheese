@@ -26,4 +26,16 @@ public class SimpleGoal : Goal
     {
         return _isComplete ? "[X]" : "[ ]";
     }
+
+    public override string Serialize()
+    {
+        return $"SimpleGoal|{Name}|{Points}|{_isComplete}";
+    }
+
+    public override void Deserialize(string[] data)
+    {
+        Name = data[1];
+        Points = int.Parse(data[2]);
+        _isComplete = bool.Parse(data[3]);
+    }
 }

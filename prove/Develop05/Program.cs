@@ -1,4 +1,8 @@
 //Main Class
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 class Program
 {
     static List<Goal> goals = new List<Goal>();
@@ -113,26 +117,48 @@ class Program
 
     static void SaveGoals()
     {
-        using (FileStream fs = new FileStream("goals.dat", FileMode.Create))
+        List<string> lines = new List<string>
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(fs, goals);
-            formatter.Serialize(fs, totalScore);
+            totalScore.ToString()
+        };
+
+        foreach (var goal in goals)
+        {
+            lines.Add(goal.Serialize());
         }
+
+        File.WriteAllLines("goals.txt", lines);
         Console.WriteLine("Goals and score saved.");
     }
 
     static void LoadGoals()
     {
-        if (File.Exists("goals.dat"))
+        if (File.Exists("goals.txt"))
         {
-            using (FileStream fs = new FileStream("goals.dat", FileMode.Open))
+            string[] lines = File.ReadAllLines("goals.txt");
+            if (lines.Length > 0)
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                goals = (List<Goal>)formatter.Deserialize(fs);
-                totalScore = (int)formatter.Deserialize(fs);
+                totalScore = int.Parse(lines[0]);
+                goals.Clear();
+
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string[] parts = lines[i].Split('|');
+                    string type = parts[0];
+
+                    Goal goal = type switch
+                    {
+                        "SimpleGoal" => new SimpleGoal("", 0),
+                        "EternalGoal" => new EternalGoal("", 0),
+                        "ListGoal" => new ListGoal("", 0, 0, 0),
+                        _ => throw new Exception("Unknown goal type.")
+                    };
+
+                    goal.Deserialize(parts);
+                    goals.Add(goal);
+                }
+                Console.WriteLine("Goals and score loaded.");
             }
-            Console.WriteLine("Goals and score loaded.");
         }
     }
 }
