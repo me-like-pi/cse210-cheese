@@ -12,7 +12,7 @@ public class SimpleGoal : Goal
         if (!_isComplete)
         {
             _isComplete = true;
-            return Points;
+            return _points;
         }
         return 0;
     }
@@ -29,13 +29,13 @@ public class SimpleGoal : Goal
 
     public override string Serialize()
     {
-        return $"SimpleGoal|{Name}|{Points}|{_isComplete}";
+        return $"SimpleGoal|{_name}|{_points}|{_isComplete}";
     }
 
     public override void Deserialize(string[] data)
     {
-        Name = data[1];
-        Points = int.Parse(data[2]);
+        _name = data[1];
+        _points = int.Parse(data[2]);
         _isComplete = bool.Parse(data[3]);
     }
 }

@@ -4,7 +4,7 @@ public class EternalGoal : Goal
 
     public override int RecordEvent()
     {
-        return Points;
+        return _points;
     }
 
     public override bool IsComplete()
@@ -19,12 +19,12 @@ public class EternalGoal : Goal
 
     public override string Serialize()
     {
-        return $"EternalGoal|{Name}|{Points}";
+        return $"EternalGoal|{_name}|{_points}";
     }
 
     public override void Deserialize(string[] data)
     {
-        Name = data[1];
-        Points = int.Parse(data[2]);
+        _name = data[1];
+        _points = int.Parse(data[2]);
     }
 }

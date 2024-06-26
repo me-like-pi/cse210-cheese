@@ -1,12 +1,12 @@
 public abstract class Goal
 {
-    public string Name;
-    public int Points;
+    public string _name;
+    protected int _points;
 
     public Goal(string name, int points)
     {
-        Name = name;
-        Points = points;
+        _name = name;
+        _points = points;
     }
 
     public abstract int RecordEvent();

@@ -83,7 +83,7 @@ class Program
         Console.WriteLine("Select a goal to record (enter number): ");
         for (int i = 0; i < goals.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {goals[i].Name}");
+            Console.WriteLine($"{i + 1}. {goals[i]._name}");
         }
 
         int goalIndex = int.Parse(Console.ReadLine()) - 1;
@@ -106,7 +106,7 @@ class Program
         {
             Goal goal = goals[i];
             string status = goal.GetStatus();
-            Console.WriteLine($"{i + 1}. {goal.Name} {status}");
+            Console.WriteLine($"{i + 1}. {goal._name} {status}");
         }
     }
 
@@ -146,7 +146,7 @@ class Program
                     string[] parts = lines[i].Split('|');
                     string type = parts[0];
 
-                    Goal goal = type switch
+                    Goal goal = type switch //From Stack overflow, Cool way to do this.
                     {
                         "SimpleGoal" => new SimpleGoal("", 0),
                         "EternalGoal" => new EternalGoal("", 0),
