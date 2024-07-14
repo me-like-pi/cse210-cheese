@@ -1,20 +1,8 @@
-class Comments
+public class Comment
 {
-    private string _commenterName;
-    private string _commenterText;
+    public string CommenterName { get; set; }
+    public string CommenterText { get; set; }
 
-    public Comments()
-    {
-        _commenterName = "jim";
-        _commenterText = "your video is stinky";
-    }
-
-    public string getCommenterName()
-    {
-        return _commenterName;
-    }
-    public string getCommentText()
-    {
-        return _commenterText;
-    }
+    public string GetCommenterName() => CommenterName;
+    public string GetCommentText() => CommenterText;
 }

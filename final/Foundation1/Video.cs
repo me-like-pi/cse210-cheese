@@ -1,43 +1,14 @@
-using System.Runtime.CompilerServices;
-
-
 public class Video
 {
-    private string _title;
-    private string _author;
-    private float _length;
-    private List<string> _comments;
+    public string Title { get; set; }
+    public string Author { get; set; }
+    public int Length { get; set; }
+    public List<string> Comments { get; set; } = new List<string>();
 
-    public Video()
-    {
-        _title = "Youtube test title";
-        _comments = ["testlist","testlist 2"];
-        _author = "melikepi";
-        _length = 45.30f;
-    }
-    public string getTitle()
-    {
-        Console.WriteLine(_title);
-        return _title;
-    }
-    public string getAuthor()
-    {
-        return _author;
-    }
-    public float getLength()
-    {
-        return _length;
-    }
-    public int getNumberOfComments()
-    {
-        return 66;
-    }
-    public void addComment()
-    {
-        
-    }
-    public List<string> getComments()
-    {
-        return _comments;
-    }
+    public string GetTitle() => Title;
+    public string GetAuthor() => Author;
+    public int GetLength() => Length;
+    public int GetNumberOfComments() => Comments.Count;
+    public void AddComment(string comment) => Comments.Add(comment);
+    public List<string> GetComments() => Comments;
 }
