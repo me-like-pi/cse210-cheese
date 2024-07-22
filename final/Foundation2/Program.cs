@@ -8,7 +8,6 @@ class Program
 
         Product product = new Product
         {
-
             Name = "cheese",
             ProductID = "54648",
             PricePerUnit = 5.99f,

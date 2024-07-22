@@ -1,9 +1,19 @@
 using System;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
-        Console.WriteLine("Hello Foundation3 World!");
+        Lecture lecture = new Lecture
+        {
+            Title = "Particles:Part of Your World",
+            Description = "A lecture on particle physics.",
+            Date = "2024-07-21",
+            Time = "10:00 AM",
+            Address = "123 Main St",
+            Speaker = "John Bob",
+            Capacity = 100
+        };
+        Console.WriteLine($"Lecture: {lecture.GetFullDetails()}");
     }
 }
