@@ -1,7 +1,14 @@
 public class Lecture : Event
 {
-    public string Speaker { get; set; }
-    public int Capacity { get; set; }
+    private string speaker;
+    private int capacity;
 
-    public new string GetFullDetails() => $"{base.GetFullDetails()}, Speaker: {Speaker}, Capacity: {Capacity}";
+    public Lecture(string title, string description, string date, string time, Address address, string speaker, int capacity)
+        : base(title, description, date, time, address)
+    {
+        this.speaker = speaker;
+        this.capacity = capacity;
+    }
+
+    public override string GetFullDetails() => $"{base.GetFullDetails()}, Speaker: {speaker}, Capacity: {capacity}";
 }

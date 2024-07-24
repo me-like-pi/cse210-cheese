@@ -1,12 +1,18 @@
 public class Activity
 {
-    public string Date { get; set; }
-    public int Minutes { get; set; }
+    private string date;
+    private int minutes;
 
-    public string GetDate() => Date;
-    public int GetMinutes() => Minutes;
+    public Activity(string date, int minutes)
+    {
+        this.date = date;
+        this.minutes = minutes;
+    }
+
+    public string GetDate() => date;
+    public int GetMinutes() => minutes;
+    public virtual float GetDistance() => 0;
     public virtual float GetSpeed() => 0;
     public virtual float GetPace() => 0;
-    public virtual float GetDistance() => 0;
-    public virtual string GetSummary() => $"{Date}, {Minutes} minutes";
+    public virtual string GetSummary() => $"{date} ({minutes} min)";
 }

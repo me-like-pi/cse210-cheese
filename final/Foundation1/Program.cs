@@ -35,7 +35,7 @@ public class Program
             }
         };
 
-        videos[0].AddComment("John Halo", "man that was probs too many ngl!");
+        videos[0].AddComment("John Halo", "man that was probs too many ngl");
         videos[0].AddComment("Melikpi", "Epic video!");
         videos[0].AddComment("taulover", "I'm hungry now.");
 

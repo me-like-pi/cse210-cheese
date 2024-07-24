@@ -1,9 +1,17 @@
+using System;
+
 public class Customer
 {
-    public string Name { get; set; }
-    public string Address { get; set; }
+    private string name;
+    private Address address;
 
-    public string GetName() => Name;
-    public string GetAddress() => Address;
-    public bool IsInUSA() => Address.Contains("USA");
+    public Customer(string name, Address address)
+    {
+        this.name = name;
+        this.address = address;
+    }
+
+    public string GetName() => name;
+    public Address GetAddress() => address;
+    public bool IsInUSA() => address.IsInUSA();
 }

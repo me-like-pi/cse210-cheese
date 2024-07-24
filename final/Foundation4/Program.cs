@@ -1,14 +1,19 @@
 using System;
+
 public class Program
 {
     public static void Main()
     {
-        Running running = new Running
+        List<Activity> activities = new List<Activity>
         {
-            Date = "2024-07-14",
-            Minutes = 30,
-            Distance = 5.0f
+            new Running("2024-07-14", 30, 5.0f),
+            new Cycling("2024-07-15", 45, 20.0f),
+            new Swimming("2024-07-16", 60, 40)
         };
-        Console.WriteLine($"Running Activity: {running.GetSummary()}, Speed: {running.GetSpeed()} km/h");
+
+        foreach (var activity in activities)
+        {
+            Console.WriteLine(activity.GetSummary());
+        }
     }
 }

@@ -1,13 +1,23 @@
+using System;
+
 public class Product
 {
-    public string Name { get; set; }
-    public string ProductID { get; set; }
-    public float PricePerUnit { get; set; }
-    public int Quantity { get; set; }
+    private string name;
+    private string productID;
+    private float pricePerUnit;
+    private int quantity;
 
-    public string GetName() => Name;
-    public string GetProductID() => ProductID;
-    public float GetPricePerUnit() => PricePerUnit;
-    public int GetQuantity() => Quantity;
-    public float GetTotalCost() => PricePerUnit * Quantity;
+    public Product(string name, string productID, float pricePerUnit, int quantity)
+    {
+        this.name = name;
+        this.productID = productID;
+        this.pricePerUnit = pricePerUnit;
+        this.quantity = quantity;
+    }
+
+    public string GetName() => name;
+    public string GetProductID() => productID;
+    public float GetPricePerUnit() => pricePerUnit;
+    public int GetQuantity() => quantity;
+    public float GetTotalCost() => pricePerUnit * quantity;
 }

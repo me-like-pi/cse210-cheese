@@ -1,31 +1,42 @@
+using System;
+using System.Collections.Generic;
+
 public class Order
 {
-    public List<string> Products { get; set; } = new List<string>();
-    public int Customer { get; set; }
+    private List<Product> products = new List<Product>();
+    private Customer customer;
+    private const float USA_SHIPPING_COST = 5.0f;
+    private const float INTERNATIONAL_SHIPPING_COST = 35.0f;
 
+    public Order(Customer customer)
+    {
+        this.customer = customer;
+    }
+
+    public void AddProduct(Product product) => products.Add(product);
     public float GetTotalCost()
     {
         float totalCost = 0;
-        foreach (var product in Products)
+        foreach (var product in products)
         {
-            Product prod = GetProductByName(product);
-            totalCost += prod.GetTotalCost();
+            totalCost += product.GetTotalCost();
         }
+        totalCost += customer.IsInUSA() ? USA_SHIPPING_COST : INTERNATIONAL_SHIPPING_COST;
         return totalCost;
     }
 
-    public string GetPackingLabel() => $"Customer ID: {Customer}, Products: {string.Join(", ", Products)}";
-    public string GetShippingLabel() => $"Customer ID: {Customer}, Shipping Address: {GetCustomerById(Customer).GetAddress()}";
-
-    private Product GetProductByName(string name)
+    public string GetPackingLabel()
     {
-        // Dummy method for illustration
-        return new Product();
+        string label = "Packing Label:\n";
+        foreach (var product in products)
+        {
+            label += $"{product.GetName()} (ID: {product.GetProductID()})\n";
+        }
+        return label;
     }
 
-    private Customer GetCustomerById(int id)
+    public string GetShippingLabel()
     {
-        // Dummy method for illustration
-        return new Customer();
+        return $"Shipping Label:\n{customer.GetName()}\n{customer.GetAddress().GetAddressString()}";
     }
 }

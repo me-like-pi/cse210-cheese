@@ -1,12 +1,21 @@
 public class Event
 {
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string Date { get; set; }
-    public string Time { get; set; }
-    public string Address { get; set; }
+    private string title;
+    private string description;
+    private string date;
+    private string time;
+    private Address address;
 
-    public string GetStandardDetails() => $"{Title}, {Date}, {Time}, {Address}";
-    public string GetFullDetails() => $"{Title}, {Description}, {Date}, {Time}, {Address}";
-    public string GetShortDescription() => $"{Title}, {Date}";
+    public Event(string title, string description, string date, string time, Address address)
+    {
+        this.title = title;
+        this.description = description;
+        this.date = date;
+        this.time = time;
+        this.address = address;
+    }
+
+    public string GetStandardDetails() => $"{title}, {description}, {date}, {time}, {address.GetFullAddress()}";
+    public virtual string GetFullDetails() => $"{title}, {description}, {date}, {time}, {address.GetFullAddress()}";
+    public virtual string GetShortDescription() => $"Event: {title}, {date}";
 }
